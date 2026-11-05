@@ -1,13 +1,37 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "tailwindcss";
+
+/* 1. Regular Weight (Variable Font) */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/assets/fonts/Figtree-VariableFont_wght.ttf') format('truetype');
+  font-weight: 500 800; /* Variable fonts support a weight range */
+  font-style: normal;
+  font-display: swap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* 2. Italic Weight (Variable Font) */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/assets/fonts/Figtree-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 500 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 3. Static Medium Weight (Alternative if not using variable) */
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/assets/fonts/static/Figtree-Medium.ttf') format('truetype');
+  font-weight: 500; /* Fixed at 500 for Medium */
+  font-style: normal; /* Fixed: changed from 'bold' */
+  font-display: swap;
+}
+
+@theme {
+  --font-custom: 'MyCustomFont', sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
 }
